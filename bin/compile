@@ -36,7 +36,7 @@ then
   echo '       Found existing `.sentryclirc` file'
   
   echo '       Installing sentry-cli'
-  export PATH=$PATH:~/.bin
+  setenv PATH=$PATH:~/.bin
   export INSTALL_DIR=~/.bin
   mkdir -p ~/.bin
 
@@ -46,7 +46,7 @@ then
   sentry-cli releases new $GIT_REV
 
   echo '       Setting sentry environment vars'
-  export REACT_APP_SENTRY_RELEASE=$GIT_REV
-  export REACT_APP_GIT_COMMIT=$GIT_REV
-  export REACT_APP_BUILD_NUMBER=BUILDPACK
+  setenv REACT_APP_SENTRY_RELEASE=$GIT_REV
+  setenv REACT_APP_GIT_COMMIT=$GIT_REV
+  setenv REACT_APP_BUILD_NUMBER=BUILDPACK
 fi
