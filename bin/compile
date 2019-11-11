@@ -36,7 +36,7 @@ then
   echo '       Found existing `.sentryclirc` file'
   
   echo '       Installing sentry-cli'
-  npm i -g sentry-cli
+  curl -sL https://sentry.io/get-cli/ | bash
 
   echo '       Setting sentry environment vars'
   export REACT_APP_SENTRY_RELEASE=$(sentry-cli releases propose-version)
