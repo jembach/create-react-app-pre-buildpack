@@ -36,7 +36,10 @@ then
   echo '       Found existing `.sentryclirc` file'
   
   echo '       Installing sentry-cli'
-  apt update && apt install sudo
+  export PATH=$PATH:~/.bin
+  export INSTALL_DIR=~/.bin
+  mkdir -p ~/.bin
+
   curl -sL https://sentry.io/get-cli/ | bash
 
   echo '       Setting sentry environment vars'
