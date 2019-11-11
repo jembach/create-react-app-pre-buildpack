@@ -42,6 +42,9 @@ then
 
   curl -sL https://sentry.io/get-cli/ | bash
 
+  echo '       Creating sentry release `$GIT_REV`'
+  sentry-cli releases new $GIT_REV
+
   echo '       Setting sentry environment vars'
   export REACT_APP_SENTRY_RELEASE=$(sentry-cli releases propose-version)
   export REACT_APP_GIT_COMMIT=$(git rev-parse HEAD)
