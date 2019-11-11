@@ -36,6 +36,7 @@ then
   echo '       Found existing `.sentryclirc` file'
   
   echo '       Installing sentry-cli'
+  apt update && apt install sudo
   curl -sL https://sentry.io/get-cli/ | bash
 
   echo '       Setting sentry environment vars'
