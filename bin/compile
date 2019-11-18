@@ -29,6 +29,5 @@ then
 
   curl -sL https://sentry.io/get-cli/ | bash
 
-  echo "       Creating sentry release `$GIT_REV`"
   sentry-cli releases new $GIT_REV
 fi
