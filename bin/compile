@@ -30,4 +30,7 @@ then
   curl -sL https://sentry.io/get-cli/ | bash
 
   sentry-cli releases new $GIT_REV
+  sentry-cli releases set-commits --auto $GIT_REV
+  sentry-cli releases files $GIT_REV upload-sourcemaps ./ -x .js -x .map --validate --verbose --rewrite --strip-common-prefix
+  sentry-cli releases finalize $GIT_REV
 fi
